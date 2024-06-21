@@ -1,1 +1,1 @@
-web: gunicorn project_fandom.wsgi
+web: gunicorn boutique_ado.wsgi
