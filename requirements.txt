@@ -9,6 +9,7 @@ gunicorn==22.0.0
 idna==3.7
 oauthlib==3.2.2
 packaging==24.1
+pillow==10.3.0
 pycparser==2.22
 PyJWT==2.8.0
 python-dotenv==1.0.1
