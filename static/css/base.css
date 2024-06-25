@@ -23,6 +23,14 @@ body {
     text-transform: uppercase;
 }
 
+.h4-delivery-banner {
+    font-size: clamp(1.2rem, 1rem + 0.5vw, 1.5rem);
+}
+
+.h2-title-products {
+    font-size: clamp(1.5rem, 1.1rem + 1vw, 2rem);
+}
+
 .main-logo-link {
     width: fit-content;
 }
@@ -91,5 +99,27 @@ body {
 
     .header-container {
         padding-top: 164px;
+    }
+}
+
+/* pad the top a bit when navbar is collapsed on ipad mini */
+@media (max-width: 991px) {
+    .header-container {
+        padding-top: 113px;
+    }
+
+    body {
+        height: calc(100vh - 113px);
+    }
+}
+
+/* pad the top more when navbar is collapsed on mobile */
+@media (max-width: 380px) {
+    .header-container {
+        padding-top: 175px;
+    }
+
+    body {
+        height: calc(100vh - 175px);
     }
 }
