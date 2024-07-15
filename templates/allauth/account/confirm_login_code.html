@@ -4,8 +4,8 @@
 {% block head_title %}
     {% translate "Sign In" %}
 {% endblock head_title %}
-{% block content %}
-    {% element h1 %}
+{% block inner_content %}
+    {% element h2 %}
         {% translate "Enter Sign-In Code" %}
     {% endelement %}
     {% setvar email_link %}
@@ -34,4 +34,4 @@
             {% translate "Other sign-in options" %}
         {% endelement %}
     {% endelement %}
-{% endblock content %}
+{% endblock inner_content %}

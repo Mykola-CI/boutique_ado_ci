@@ -3,10 +3,12 @@
 {% block head_title %}
     {% trans "Sign Out" %}
 {% endblock head_title %}
-{% block content %}
-    {% element h1 %}
+{% block inner_content %}
+    {% element hr %} {% endelement %}
+    {% element h2 %}
         {% trans "Sign Out" %}
     {% endelement %}
+    {% element hr %} {% endelement %}
     {% element p %}
         {% trans 'Are you sure you want to sign out?' %}
     {% endelement %}
@@ -17,9 +19,10 @@
             {{ redirect_field }}
         {% endslot %}
         {% slot actions %}
+            <a class="btn btn-outline-black rounded-0" href="{% url 'home' %}">Home</a>
             {% element button type="submit" %}
                 {% trans 'Sign Out' %}
             {% endelement %}
         {% endslot %}
     {% endelement %}
-{% endblock content %}
+{% endblock inner_content %}

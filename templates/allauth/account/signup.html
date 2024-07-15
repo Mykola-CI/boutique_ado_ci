@@ -3,8 +3,8 @@
 {% block head_title %}
     {% trans "Signup" %}
 {% endblock head_title %}
-{% block content %}
-    {% element h1 %}
+{% block inner_content %}
+    {% element h2 %}
         {% trans "Sign Up" %}
     {% endelement %}
     {% setvar link %}
@@ -35,4 +35,4 @@
     {% if SOCIALACCOUNT_ENABLED %}
         {% include "socialaccount/snippets/login.html" with page_layout="entrance" %}
     {% endif %}
-{% endblock content %}
+{% endblock inner_content %}

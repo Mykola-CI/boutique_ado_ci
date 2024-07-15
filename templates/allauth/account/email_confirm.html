@@ -5,8 +5,8 @@
 {% block head_title %}
     {% trans "Confirm Email Address" %}
 {% endblock head_title %}
-{% block content %}
-    {% element h1 %}
+{% block inner_content %}
+    {% element h2 %}
         {% trans "Confirm Email Address" %}
     {% endelement %}
     {% if confirmation %}
@@ -36,4 +36,4 @@
             {% blocktrans %}This email confirmation link expired or is invalid. Please <a href="{{ email_url }}">issue a new email confirmation request</a>.{% endblocktrans %}
         {% endelement %}
     {% endif %}
-{% endblock content %}
+{% endblock inner_content %}

@@ -4,8 +4,8 @@
 {% block head_title %}
     {% trans "Email Address" %}
 {% endblock head_title %}
-{% block content %}
-    {% element h1 %}
+{% block inner_content %}
+    {% element h2 %}
         {% trans "Email Address" %}
     {% endelement %}
     {% if not emailaddresses %}
@@ -65,4 +65,4 @@
             <input type="hidden" name="email" value="{{ new_emailaddress.email }}">
         </form>
     {% endif %}
-{% endblock content %}
+{% endblock inner_content %}
