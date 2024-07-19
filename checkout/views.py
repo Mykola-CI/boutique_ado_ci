@@ -89,14 +89,6 @@ def checkout(request):
             # Save the info to the user's profile if all is well
             request.session['save_info'] = 'save-info' in request.POST
 
-            # Save first and last name to the User model
-            # if request.user.is_authenticated:
-            #     full_name = form_data['full_name']
-            #     first_name, last_name = full_name.split(' ', 1) if ' ' in full_name else (full_name, '')
-            #     request.user.first_name = first_name
-            #     request.user.last_name = last_name
-            #     request.user.save()
-
             return redirect(
                 reverse('checkout_success', args=[order.order_number]))
         else:
