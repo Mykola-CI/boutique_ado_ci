@@ -221,7 +221,7 @@ STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY')
 STRIPE_WH_SECRET = os.getenv('STRIPE_WH_SECRET')
 
 
-DEVELOPMENT = os.getenv('DEVELOPMENT')
+DEVELOPMENT = os.getenv('DEVELOPMENT') == 'True'
 if DEVELOPMENT:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
     DEFAULT_FROM_EMAIL = 'boutiqueado@example.com'
@@ -231,6 +231,10 @@ else:
     EMAIL_USE_SSL = False
     EMAIL_PORT = 587
     EMAIL_HOST = 'smtp.gmail.com'
-    EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
-    EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASS')
-    DEFAULT_FROM_EMAIL = os.environ.get('EMAIL_HOST_USER')
+    EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')
+    EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASS')
+    DEFAULT_FROM_EMAIL = os.getenv('EMAIL_HOST_USER')
+
+    # Explicitly set SSL keyfile and certfile to None
+    # EMAIL_SSL_KEYFILE = None
+    # EMAIL_SSL_CERTFILE = None
