@@ -57,7 +57,7 @@ def checkout(request):
             pid = request.POST.get('client_secret').split('_secret')[0]
             order.stripe_pid = pid
             order.original_bag = json.dumps(bag)
-            order.save()
+            # order.save()
             for item_id, item_data in bag.items():
                 try:
                     product = Product.objects.get(id=item_id)
@@ -67,7 +67,7 @@ def checkout(request):
                             product=product,
                             quantity=item_data,
                         )
-                        order_line_item.save()
+                        # order_line_item.save()
                     else:
                         for size, quantity in item_data['items_by_size'].items(
                         ):
@@ -77,7 +77,7 @@ def checkout(request):
                                 quantity=quantity,
                                 product_size=size,
                             )
-                            order_line_item.save()
+                            # order_line_item.save()
                 except Product.DoesNotExist:
                     messages.error(request, (
                         "One of the products in your bag wasn't found"
